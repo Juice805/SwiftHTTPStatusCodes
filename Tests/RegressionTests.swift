@@ -7,19 +7,8 @@
 //
 
 import Foundation
-
-#if os(watchOS)
-// No testing supported
-@testable import HTTPStatusCodes
-#else
-    
 import XCTest
-    
-#if DEBUG
 @testable import HTTPStatusCodes
-#else
-import HTTPStatusCodes
-#endif
 
 extension HTTPStatusCode: ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) {
@@ -267,5 +256,3 @@ final class RegressionTests: XCTestCase {
         XCTAssertEqual(HTTPURLResponse(url: URL(string: "http://www.google.com")!, statusCode: .ok, httpVersion: nil, headerFields: nil)!.statusCodeValue, .ok)
     }
 }
-    
-#endif

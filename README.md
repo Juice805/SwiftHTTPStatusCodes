@@ -1,9 +1,4 @@
 # SwiftHTTPStatusCodes
-[![Build Status](https://travis-ci.org/rhodgkins/SwiftHTTPStatusCodes.svg?branch=master)](https://travis-ci.org/rhodgkins/SwiftHTTPStatusCodes)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Pod Version](http://img.shields.io/cocoapods/v/HTTPStatusCodes.svg)](http://cocoadocs.org/docsets/HTTPStatusCodes/)
-[![Pod Platform](http://img.shields.io/cocoapods/p/HTTPStatusCodes.svg)](http://cocoadocs.org/docsets/HTTPStatusCodes/)
-[![Pod License](http://img.shields.io/cocoapods/l/HTTPStatusCodes.svg)](http://opensource.org/licenses/MIT)
 
 Swift enum wrapper for easier handling of HTTP status codes. 
 
@@ -25,30 +20,11 @@ Swift 3.0 support is added in version 3.1 of this framework. For use with older 
 .package(url: "https://github.com/rhodgkins/SwiftHTTPStatusCodes.git", .upToNextMajor(from: "3.0.0"))
 ```
 
-### Carthage
-
-`Cartfile`:
-```ogdl
-github "rhodgkins/SwiftHTTPStatusCodes" ~> 3.2
-```
-Source code:
-```swift
-import HTTPStatusCodes
-```
-
-### CocoaPods
-`Podfile`:
-```ruby
-pod 'HTTPStatusCodes', '~> 3.2.0'
-```
 Source code:
 
 ```swift
 import HTTPStatusCodes
 ```
-
-### Manually
-Or drop in the Swift files inside the [`Sources folder`](https://github.com/rhodgkins/SwiftHTTPStatusCodes/tree/master/Sources) into your project.
 
 ## Helper methods
 

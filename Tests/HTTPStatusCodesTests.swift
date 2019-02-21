@@ -7,19 +7,8 @@
 //
 
 import Foundation
-
-#if os(watchOS)
-// No testing supported
-@testable import HTTPStatusCodes
-#else
-
 import XCTest
-
-#if DEBUG
 @testable import HTTPStatusCodes
-#else
-import HTTPStatusCodes
-#endif
 
 private func responseUsingInt(_ statusCode: Int) -> HTTPURLResponse {
     return HTTPURLResponse(url: URL(string: "http://www.google.com")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)!
@@ -179,5 +168,3 @@ final class HTTPStatusCodesTests: XCTestCase {
         XCTAssertTrue(HTTPStatusCode(HTTPResponse: responseUsingInt(1000)) == nil)
     }
 }
-
-#endif

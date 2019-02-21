@@ -68,21 +68,12 @@ public extension HTTPStatusCode {
 }
 
 public extension HTTPURLResponse {
-    
-    /**
-     * Marked internal to expose (as `statusCodeValue`) for Objective-C interoperability only.
-     *
-     * - returns: the receiver’s HTTP status code.
-     */
-    var statusCodeEnum: HTTPStatusCode {
-        return HTTPStatusCode(HTTPResponse: self)!
-    }
-    
+
     /// - returns: the receiver’s HTTP status code.
     public var statusCodeValue: HTTPStatusCode? {
         return HTTPStatusCode(HTTPResponse: self)
     }
-    
+
     /**
      * Initializer for NSHTTPURLResponse objects.
      *
@@ -93,7 +84,6 @@ public extension HTTPURLResponse {
      *
      * - returns: the instance of the object, or `nil` if an error occurred during initialization.
      */
-    @available(iOS, introduced: 7.0)
     public convenience init?(url: URL, statusCode: HTTPStatusCode, httpVersion: String?, headerFields: [String : String]?) {
         self.init(url: url, statusCode: statusCode.rawValue, httpVersion: httpVersion, headerFields: headerFields)
     }

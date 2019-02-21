@@ -20,10 +20,6 @@ let package = Package(
         .testTarget(
             name: "HTTPStatusCodesTests",
             dependencies: ["HTTPStatusCodes"],
-            path: "Tests/HTTPStatusCodesTests",
-            sources: [
-                "HTTPStatusCodesTests.swift",
-                "RegressionTests.swift"
-            ])
+            path: "Tests")
     ]
 )
