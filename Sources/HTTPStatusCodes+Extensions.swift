@@ -63,15 +63,7 @@ public extension HTTPStatusCode {
         guard let statusCodeValue = HTTPResponse?.statusCode else {
             return nil
         }
-        self.init(statusCodeValue)
-    }
-
-    /// This is declared as it's not automatically picked up by the complier for the above init
-    private init?(_ rawValue: Int) {
-        guard let value = HTTPStatusCode(rawValue: rawValue) else {
-            return nil
-        }
-        self = value
+        self.init(rawValue: statusCodeValue)
     }
 }
 
