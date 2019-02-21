@@ -82,7 +82,7 @@ public extension HTTPURLResponse {
      *
      * - returns: the receiver’s HTTP status code.
      */
-    @objc(statusCodeValue) var statusCodeEnum: HTTPStatusCode {
+    var statusCodeEnum: HTTPStatusCode {
         return HTTPStatusCode(HTTPResponse: self)!
     }
     
@@ -102,117 +102,7 @@ public extension HTTPURLResponse {
      * - returns: the instance of the object, or `nil` if an error occurred during initialization.
      */
     @available(iOS, introduced: 7.0)
-    @objc(initWithURL:statusCodeValue:HTTPVersion:headerFields:)
     public convenience init?(url: URL, statusCode: HTTPStatusCode, httpVersion: String?, headerFields: [String : String]?) {
         self.init(url: url, statusCode: statusCode.rawValue, httpVersion: httpVersion, headerFields: headerFields)
     }
-}
-
-// MARK: - Deprecated cases
-
-public extension HTTPStatusCode {
-    
-    /// - deprecated: Renamed to `payloadTooLarge`
-    @available(*, deprecated, renamed: "payloadTooLarge")
-    static let requestEntityTooLarge = payloadTooLarge
-    
-    /// - deprecated: Renamed to `uriTooLong`
-    @available(*, deprecated, renamed: "uriTooLong")
-    static let requestURITooLong = uriTooLong
-    
-    /// - deprecated: Renamed to `rangeNotSatisfiable`
-    @available(*, deprecated, renamed: "rangeNotSatisfiable")
-    static let requestedRangeNotSatisfiable = rangeNotSatisfiable
-    
-    /// - deprecated: Renamed to `iisLoginTimeout`
-    @available(*, deprecated, renamed: "iisLoginTimeout")
-    static let loginTimeout = iisLoginTimeout
-    
-    /// - deprecated: Renamed to `iisRetryWith`
-    @available(*, deprecated, renamed: "iisRetryWith")
-    static let retryWith = iisRetryWith
-    
-    /// - deprecated: Renamed to `nginxNoResponse`
-    @available(*, deprecated, renamed: "nginxNoResponse")
-    static let noResponse = nginxNoResponse
-    
-    /// - deprecated: Renamed to `nginxSSLCertificateError`
-    @available(*, deprecated, renamed: "nginxSSLCertificateError")
-    static let certError = nginxSSLCertificateError
-    
-    /// - deprecated: Renamed to `nginxSSLCertificateRequired`
-    @available(*, deprecated, renamed: "nginxSSLCertificateRequired")
-    static let noCert = nginxSSLCertificateRequired
-    
-    /// - deprecated: Renamed to `nginxHTTPToHTTPS`
-    @available(*, deprecated, renamed: "nginxHTTPToHTTPS")
-    static let httpToHTTPS = nginxHTTPToHTTPS
-    
-    /// - deprecated: Renamed to `nginxClientClosedRequest`
-    @available(*, deprecated, renamed: "nginxClientClosedRequest")
-    static let clientClosedRequest = nginxClientClosedRequest
-    
-    /// - deprecated: Renamed to `networkConnectTimeoutError`
-    @available(*, deprecated, renamed: "networkConnectTimeoutError")
-    static let networkTimeoutError = networkConnectTimeoutError
-    
-    /// Returned by version 1 of the Twitter Search and Trends API when the client is being rate limited; versions 1.1 and later use the 429 Too Many Requests (`tooManyRequests`) response code instead.
-    ///
-    /// - seealso: [Twitter Error Codes & Responses](https://dev.twitter.com/docs/error-codes-responses)
-    @available(*, deprecated, renamed: "tooManyRequests")
-    static let twitterEnhanceYourCalm = tooManyRequests
-}
-
-public extension HTTPURLResponse {
-    
-    /// - deprecated: Renamed to `init(url:statusCode:httpVersion:headerFields)` to correct Swift 3 naming convention.
-    @available(*, deprecated, renamed: "init(url:statusCode:httpVersion:headerFields:)", message: "Renamed to correct Swift 3 naming convention")
-    @nonobjc
-    public convenience init?(url: URL, statusCode: HTTPStatusCode, HTTPVersion: String?, headerFields: [String : String]?) {
-        self.init(url: url, statusCode: statusCode, httpVersion: HTTPVersion, headerFields: headerFields)
-    }
-}
-
-// MARK: - Remove cases
-
-/// Declared here for a cleaner API with no `!` types.
-private let __Unavailable: HTTPStatusCode! = nil
-
-public extension HTTPStatusCode {
-    
-    /// Checkpoint: 103
-    ///
-    /// Used in the resumable requests proposal to resume aborted PUT or POST requests.
-    ///
-    /// - seealso: [Original proposal](https://web.archive.org/web/20151013212135/http://code.google.com/p/gears/wiki/ResumableHttpRequestsProposal)
-    @available(*, unavailable, renamed: "earlyHints", message: "Replaced by RFC standard code with different meaning")
-    static let checkpoint = __Unavailable
-    
-    /// Switch Proxy: 306
-    ///
-    /// No longer used. Originally meant "Subsequent requests should use the specified proxy."
-    ///
-    /// - seealso: [Original draft](https://tools.ietf.org/html/draft-cohen-http-305-306-responses-00)
-    @available(*, unavailable, message: "No longer used")
-    static let switchProxy = __Unavailable
-    
-    /// Authentication Timeout: 419
-    ///
-    /// Removed from Wikipedia page.
-    @available(*, unavailable, message: "No longer available")
-    static let authenticationTimeout = __Unavailable
-    
-    /// Method Failure: 419
-    ///
-    /// A deprecated response used by the Spring Framework when a method has failed.
-    ///
-    /// - seealso: [Spring Framework: HttpStatus enum documentation - `METHOD_FAILURE`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/HttpStatus.html#METHOD_FAILURE)
-    @available(*, unavailable, message: "Deprecated")
-    static let springFrameworkMethodFailure = __Unavailable
-    
-    /// Request Header Too Large: 494
-    ///
-    /// Removed and replaced with `RequestHeaderFieldsTooLarge` - 431
-    @available(*, unavailable, renamed: "requestHeaderFieldsTooLarge", message: "Changed to a 431 status code")
-    static let requestHeaderTooLarge = __Unavailable
 }

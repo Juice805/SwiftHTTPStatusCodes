@@ -70,10 +70,10 @@ final class RegressionTests: XCTestCase {
         XCTAssertEqual(HTTPStatusCode.gone, 410)
         XCTAssertEqual(HTTPStatusCode.lengthRequired, 411)
         XCTAssertEqual(HTTPStatusCode.preconditionFailed, 412)
-        XCTAssertEqual(HTTPStatusCode.requestEntityTooLarge, 413)
-        XCTAssertEqual(HTTPStatusCode.requestURITooLong, 414)
+//        XCTAssertEqual(HTTPStatusCode.requestEntityTooLarge, 413)
+//        XCTAssertEqual(HTTPStatusCode.requestURITooLong, 414)
         XCTAssertEqual(HTTPStatusCode.unsupportedMediaType, 415)
-        XCTAssertEqual(HTTPStatusCode.requestedRangeNotSatisfiable, 416)
+//        XCTAssertEqual(HTTPStatusCode.requestedRangeNotSatisfiable, 416)
         XCTAssertEqual(HTTPStatusCode.expectationFailed, 417)
         XCTAssertEqual(HTTPStatusCode.imATeapot, 418)
 //        XCTAssertEqual(HTTPStatusCode.authenticationTimeout, 419)
@@ -84,16 +84,16 @@ final class RegressionTests: XCTestCase {
         XCTAssertEqual(HTTPStatusCode.preconditionRequired, 428)
         XCTAssertEqual(HTTPStatusCode.tooManyRequests, 429)
         XCTAssertEqual(HTTPStatusCode.requestHeaderFieldsTooLarge, 431)
-        XCTAssertEqual(HTTPStatusCode.loginTimeout, 440)
-        XCTAssertEqual(HTTPStatusCode.noResponse, 444)
-        XCTAssertEqual(HTTPStatusCode.retryWith, 449)
+//        XCTAssertEqual(HTTPStatusCode.loginTimeout, 440)
+//        XCTAssertEqual(HTTPStatusCode.noResponse, 444)
+//        XCTAssertEqual(HTTPStatusCode.retryWith, 449)
         XCTAssertEqual(HTTPStatusCode.unavailableForLegalReasons, 451)
 //        XCTAssertEqual(HTTPStatusCode.requestHeaderTooLarge, 494)
-        XCTAssertEqual(HTTPStatusCode.certError, 495)
-        XCTAssertEqual(HTTPStatusCode.noCert, 496)
-        XCTAssertEqual(HTTPStatusCode.httpToHTTPS, 497)
+//        XCTAssertEqual(HTTPStatusCode.certError, 495)
+//        XCTAssertEqual(HTTPStatusCode.noCert, 496)
+//        XCTAssertEqual(HTTPStatusCode.httpToHTTPS, 497)
         XCTAssertEqual(HTTPStatusCode.tokenExpired, 498)
-        XCTAssertEqual(HTTPStatusCode.clientClosedRequest, 499)
+//        XCTAssertEqual(HTTPStatusCode.clientClosedRequest, 499)
         XCTAssertEqual(HTTPStatusCode.internalServerError, 500)
         XCTAssertEqual(HTTPStatusCode.notImplemented, 501)
         XCTAssertEqual(HTTPStatusCode.badGateway, 502)
@@ -107,7 +107,7 @@ final class RegressionTests: XCTestCase {
         XCTAssertEqual(HTTPStatusCode.notExtended, 510)
         XCTAssertEqual(HTTPStatusCode.networkAuthenticationRequired, 511)
         
-        XCTAssertEqual(HTTPURLResponse(url: URL(string: "http://www.google.com")!, statusCode: .ok, HTTPVersion: nil, headerFields: nil)!.statusCodeValue, .ok)
+//        XCTAssertEqual(HTTPURLResponse(url: URL(string: "http://www.google.com")!, statusCode: .ok, HTTPVersion: nil, headerFields: nil)!.statusCodeValue, .ok)
     }
     
     func testVersion3_0() {
@@ -184,8 +184,8 @@ final class RegressionTests: XCTestCase {
         XCTAssertEqual(HTTPStatusCode.networkAuthenticationRequired, 511)
         XCTAssertEqual(HTTPStatusCode.siteIsFrozen, 530)
         XCTAssertEqual(HTTPStatusCode.networkConnectTimeoutError, 599)
-        XCTAssertEqual(HTTPStatusCode.networkTimeoutError, 599)
-        
+//        XCTAssertEqual(HTTPStatusCode.networkTimeoutError, 599)
+
         XCTAssertEqual(HTTPURLResponse(url: URL(string: "http://www.google.com")!, statusCode: .ok, httpVersion: nil, headerFields: nil)!.statusCodeValue, .ok)
     }
     
